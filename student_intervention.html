@@ -12546,7 +12546,9 @@ F1 score for test set: 0.7910.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:  Logistic regression models a categorical outcome, for example the outcome of the problem here is 'pass' or 'not pass', which corresponds to numbers 0 and 1 respectively. Logistic regression assumes the outcome as a score between 0 and 1, and this score corresponds to the probability of a student passing the final exam given certain features of the student. Logistic regression also assumes that the outcome has some dependent relationship with the input features, which can be written out as explicit formula with a set of parameters. In training phase, the model finds out the optimal set of parameters that minimizes the error when the model predicts a wrong result on the training data. Once the optimal set of parameters on the training data is found, we can use these parameters together with the explicit dependent relationship to calculate the score and then categorize it into 0 or 1.</strong></p>
+<p><strong>Answer:  Logistic regression learns from the data of previous students. It creates a model that assigns a "weight" to each of the features (age, gender, study time, etc of a student) where the "weight" indicates how much the features impact the
+outcome (whether a student passed the final exam or not). The features and outcome interact in the following way: First the features and the weights are combined and summed up. Then the summed up value is applied to a function that produces the probability of a student passing the final exam. Finally the outcome will be 'pass' if the student has a probability of more than 50% for passing the exam.</strong></p>
+<p><strong>When training the model, we find the best combination of weights that gives the closest prediction for previous students compared to their actual outcome. When we want to predict an outcome for a new student, we will use these weights on the features of the new student, then calculate the summed up value and make a prediction based on the probability of the student passing the exam.</strong></p>
 
 </div>
 </div>
